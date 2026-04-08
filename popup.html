@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <title>Sentinel AI</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>SENTINEL</h1>
+      <span class="version">v2.0</span>
+    </header>
+
+    <div class="actions">
+      <button id="analyzeBtn" class="btn primary">Analyze Page</button>
+      <button id="trendsBtn" class="btn secondary">View Trends</button>
+    </div>
+
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p>Analyzing phrasing and tactics...</p>
+    </div>
+
+    <div id="error" class="hidden" style="color:var(--manipulative-color); font-size: 0.85rem; padding: 8px; text-align: center; background: rgba(239, 68, 68, 0.1); border-radius: 4px; margin-bottom: 12px;"></div>
+
+    <div id="results" class="hidden">
+      
+      <div class="score-card" id="scoreCard">
+        <div class="score-header">
+          <div class="score-value" id="emsScore">--</div>
+          <div class="score-label">EMS <span id="confidenceBadge" class="badge">Medium</span></div>
+        </div>
+        <div class="verdict" id="verdictText">--</div>
+        <div class="emotion">Primary Emotion: <span id="emotionDetected">--</span></div>
+      </div>
+
+      <div id="counterNarrativeCard" class="card blue-card hidden">
+        <h3>What this likely means:</h3>
+        <p id="counterNarrativeText">--</p>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-btn" id="sourceBtn">Source Profile <span id="sourceIndicator">&#9660;</span></button>
+        <div class="collapsible-content" id="sourceContent">
+          <p><strong>Account:</strong> <span id="accountName">Unknown</span></p>
+          <p><strong>Credibility Tier:</strong> <span id="credibilityTier">--</span></p>
+          <p><strong>Average EMS:</strong> <span id="averageEms">--</span></p>
+          <p><strong>Dominant Tactic:</strong> <span id="dominantTactic">--</span></p>
+        </div>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-btn" id="reasoningBtn">Reasoning & Tactics <span id="reasoningIndicator">&#9660;</span></button>
+        <div class="collapsible-content" id="reasoningContent">
+          <p id="reasoningText">--</p>
+          <div class="tactics-list">
+            <strong>Detected Tactics:</strong>
+            <ul id="tacticsList"></ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

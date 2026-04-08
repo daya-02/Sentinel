@@ -1,0 +1,241 @@
+:root {
+  --bg-color: #121212;
+  --panel-bg: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #aaaaaa;
+  --accent-color: #3b82f6; /* Calm blue */
+  --safe-color: #10b981; /* Green: 0-30 */
+  --suspicious-color: #f59e0b; /* Orange: 31-60 */
+  --manipulative-color: #ef4444; /* Red: 61-80 */
+  --highly-manipulative-color: #7f1d1d; /* Dark Red: 81-100 */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 320px;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+  padding: 16px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.version {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.primary {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.secondary {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#loading {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  border-top-color: var(--text-primary);
+  animation: spin 1s ease-in-out infinite;
+  margin: 0 auto 12px auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.score-card {
+  background-color: var(--panel-bg);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  margin-bottom: 12px;
+  border-top: 4px solid var(--text-secondary);
+  transition: border-color 0.3s;
+}
+
+.score-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.score-value {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.badge {
+  font-size: 0.6rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background-color: #444;
+  color: #fff;
+  margin-top: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.verdict {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.emotion {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.card {
+  background-color: var(--panel-bg);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+
+.blue-card {
+  border-left: 4px solid var(--accent-color);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.blue-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.blue-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.collapsible {
+  margin-bottom: 8px;
+}
+
+.collapsible-btn {
+  width: 100%;
+  text-align: left;
+  background-color: var(--panel-bg);
+  color: var(--text-primary);
+  border: none;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collapsible-btn:hover {
+  background-color: #2a2a2a;
+}
+
+.collapsible-content {
+  padding: 12px 16px;
+  background-color: #181818;
+  font-size: 0.85rem;
+  border-radius: 0 0 4px 4px;
+  display: none;
+  line-height: 1.4;
+}
+
+.collapsible-content.active {
+  display: block;
+}
+
+.collapsible-content p {
+  margin: 0 0 8px 0;
+}
+
+.collapsible-content p:last-child {
+  margin: 0;
+}
+
+.tactics-list {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #333;
+}
+
+.tactics-list ul {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+
+.tactics-list li {
+  margin-bottom: 4px;
+}

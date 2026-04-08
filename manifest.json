@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "SENTINEL",
+  "version": "2.0",
+  "description": "AI-powered digital content manipulation detector.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://api.groq.com/"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Analyze with Sentinel"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["dashboard.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

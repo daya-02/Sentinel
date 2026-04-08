@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SENTINEL | Trend Intelligence</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">SENTINEL <span>INTELLIGENCE</span></div>
+    </header>
+
+    <div class="dashboard-grid">
+      <div class="card top-sources-card">
+        <h2>Top 3 Manipulative Sources</h2>
+        <div id="topSourcesList" class="sources-list">
+          <div class="loading">Parsing intelligence data...</div>
+        </div>
+      </div>
+
+      <div class="card tactics-breakdown-card">
+        <h2>Manipulation Tactics Trending</h2>
+        <div id="tacticsBreakdownList" class="breakdown-list">
+          <div class="loading">Aggregating tactics...</div>
+        </div>
+      </div>
+
+      <div class="card chart-card">
+        <h2>Tactics Frequency Chart</h2>
+        <canvas id="tacticsBarChart"></canvas>
+      </div>
+
+      <div class="card chart-card" style="grid-column: 1 / -1;">
+        <h2>Global EMS Score Trends (Across All Reads)</h2>
+        <canvas id="emsLineChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>

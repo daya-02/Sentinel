@@ -1,0 +1,36 @@
+<div class="sentinel-header">
+  <div class="sentinel-title">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+    SENTINEL
+  </div>
+  <button class="sentinel-close" id="sentinel-close-btn">&times;</button>
+</div>
+<div class="sentinel-content" id="sentinel-content-area">
+  <div class="sentinel-loader" id="sentinel-loader">
+    <div class="sentinel-spinner"></div>
+    <p>Analyzing with AI...</p>
+    <div class="sentinel-stage" id="sentinel-stage">Initializing analysis...</div>
+  </div>
+  <div id="sentinel-results" style="display: none;">
+    <div class="sentinel-result">
+      <div class="sentinel-score-container" id="sentinel-score-bg">
+        <div class="sentinel-score-value" id="sentinel-ems-score">0</div>
+        <div class="sentinel-score-label">EMS Score</div>
+        <div class="sentinel-verdict" id="sentinel-verdict">SAFE</div>
+      </div>
+      
+      <div class="sentinel-card">
+        <div class="sentinel-card-title">Dominant Emotion</div>
+        <div class="sentinel-card-value emotion" id="sentinel-emotion">-</div>
+      </div>
+
+      <div class="sentinel-card">
+        <div class="sentinel-card-title">Analysis Verdict</div>
+        <div class="sentinel-card-value" id="sentinel-reason">-</div>
+      </div>
+    </div>
+  </div>
+  <div id="sentinel-error" class="sentinel-error" style="display: none;">
+    -
+  </div>
+</div>
