@@ -5,6 +5,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultsDiv = document.getElementById('results');
   const errorDiv = document.getElementById('error');
 
+  let currentAnalysisData = null;
+  let currentAnalysisText = "";
+
+  // Setup feedback buttons
+  const setupFeedbackBtn = (btnId, feedbackValue) => {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      if (!currentAnalysisData) return;
+      const key = "feedback_" + Date.now();
+      const feedbackObj = {
+        text: currentAnalysisText,
+        ems_score: currentAnalysisData.ems_score,
+        verdict: currentAnalysisData.verdict,
+        tactics: currentAnalysisData.tactics_detected || [],
+        user_feedback: feedbackValue,
+        timestamp: Date.now()
+      };
+      localStorage.setItem(key, JSON.stringify(feedbackObj));
+      
+      const originalText = btn.innerHTML;
+      btn.innerHTML = "Saved!";
+      setTimeout(() => { btn.innerHTML = originalText; }, 1500);
+    });
+  };
+
+  setupFeedbackBtn('feedbackYesBtn', 'yes');
+  setupFeedbackBtn('feedbackMaybeBtn', 'maybe');
+  setupFeedbackBtn('feedbackNoBtn', 'no');
+
   // Collapsible logic
   const setupCollapsible = (btnId, contentId, indicatorId) => {
     const btn = document.getElementById(btnId);
@@ -70,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           if (response && response.success) {
+            currentAnalysisData = response.data;
+            currentAnalysisText = extractedText;
             displayResults(response.data);
             
             // Highlight flagged phrases in the active tab

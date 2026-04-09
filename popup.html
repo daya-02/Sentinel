@@ -35,6 +35,15 @@
         <div class="emotion">Primary Emotion: <span id="emotionDetected">--</span></div>
       </div>
 
+      <div class="feedback-section" style="margin-top: 10px; margin-bottom: 15px; text-align: center;">
+        <p style="font-size: 0.85rem; margin-bottom: 8px; color: var(--text-secondary);">Was this accurate?</p>
+        <div style="display: flex; gap: 5px; justify-content: center; flex-wrap: wrap;">
+          <button id="feedbackYesBtn" class="btn" style="font-size: 0.8em; padding: 4px 8px; flex: 1;">✅ Yes it manipulated me</button>
+          <button id="feedbackMaybeBtn" class="btn" style="font-size: 0.8em; padding: 4px 8px; flex: 1;">❓ Not Sure</button>
+          <button id="feedbackNoBtn" class="btn" style="font-size: 0.8em; padding: 4px 8px; flex: 1;">❌ No it didn't</button>
+        </div>
+      </div>
+
       <div id="counterNarrativeCard" class="card blue-card hidden">
         <h3>What this likely means:</h3>
         <p id="counterNarrativeText">--</p>
